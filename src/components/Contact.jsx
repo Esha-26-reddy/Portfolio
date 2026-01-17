@@ -30,13 +30,14 @@ const Contact = () => {
     setStatus("")
 
     const data = {
-      access_key: "82d0c37c-9cdf-40cd-8b1d-6f7f2681e75a", // 🔴 replace this
+      access_key: import.meta.env.VITE_WEB3FORMS_KEY,
       name: formData.name,
       email: formData.email,
       message: formData.message,
       subject: "New Contact Message from Portfolio",
       from_name: "Esha Portfolio",
     }
+    
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
