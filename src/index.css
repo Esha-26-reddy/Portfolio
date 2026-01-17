@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold mb-12 text-center relative;
+    @apply bg-gradient-to-r from-indigo-400 to-violet-500 bg-clip-text text-transparent;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute left-1/2 -bottom-4 w-16 h-1 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-full;
+    transform: translateX(-50%);
+  }
+  
+  
+  
+  .card {
+    @apply bg-gray-800/70 backdrop-blur rounded-xl p-6;
+    @apply shadow-lg hover:shadow-2xl transition-all duration-300;
+    @apply border border-gray-700 hover:border-indigo-500;
+    @apply hover:-translate-y-1;
+  }
+  
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white;
+    @apply bg-gradient-to-r from-indigo-500 to-violet-600;
+    @apply hover:from-indigo-600 hover:to-violet-700;
+    @apply transition-all duration-300 hover:shadow-lg;
+  }
+  
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-800 border border-gray-700 rounded-lg;
+    @apply text-white font-semibold hover:bg-gray-700 hover:border-blue-500;
+    @apply transition-all duration-300;
+  }
+}
